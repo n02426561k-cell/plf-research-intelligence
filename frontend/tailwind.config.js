@@ -1,0 +1,93 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: 'class',
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        burgundy: {
+          DEFAULT: '#6c151e',
+          50: '#fdf3f4',
+          100: '#fae4e6',
+          200: '#f5ccd0',
+          300: '#eca3aa',
+          400: '#dd6e7a',
+          500: '#9e2330',
+          600: '#831b27',
+          700: '#6c151e',
+          800: '#56121a',
+          900: '#400e14',
+        },
+        forest: {
+          DEFAULT: '#0f3d3a',
+          50: '#f2f8f7',
+          100: '#def0ed',
+          200: '#c1e2dd',
+          300: '#96cdce',
+          400: '#53a89e',
+          500: '#267a71',
+          600: '#1b5a54',
+          700: '#0f3d3a',
+          800: '#0b2e2c',
+          900: '#082120',
+        },
+        sand: {
+          DEFAULT: '#F5DABF',
+          50: '#fdfaf6',
+          100: '#fbf7f2',
+          200: '#f8ece0',
+          300: '#F5DABF',
+          400: '#e8c29a',
+          500: '#daa875',
+          600: '#be8653',
+          700: '#9c663a',
+          800: '#7e502e',
+          900: '#664026',
+        },
+        academic: {
+          50: '#fdfbfa',
+          100: '#f8ece0',
+          200: '#F5DABF',
+          500: '#267a71',
+          600: '#0f3d3a',
+          700: '#6c151e',
+          800: '#56121a',
+          900: '#082120',
+        },
+        slatebg: {
+          50: '#fdfaf6',
+          100: '#f8f6f3',
+          800: '#151e1d',
+          900: '#0c1514',
+          950: '#060d0d',
+        }
+      },
+      fontFamily: {
+        sans: ['var(--font-source-sans)', '"Source Sans 3"', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['var(--font-lora)', 'Lora', 'Georgia', 'serif'],
+        serif: ['var(--font-lora)', 'Lora', 'Georgia', 'serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+      },
+      backgroundImage: {
+        'brand-gradient': 'linear-gradient(135deg, #0f3d3a, #267a71)',
+        'brand-gradient-warm': 'linear-gradient(135deg, #6c151e, #9e2330)',
+        'hero-glow': 'radial-gradient(ellipse 80% 50% at 50% -10%, rgba(15,61,58,0.15), transparent)',
+      },
+    },
+  },
+  safelist: [
+    // Ensure dynamic classes generated at runtime are always included
+    { pattern: /bg-(forest|burgundy|sand)-(50|100|200|300|400|500|600|700|800|900)(\/\d+)?/ },
+    { pattern: /text-(forest|burgundy|sand)-(50|100|200|300|400|500|600|700|800|900)/ },
+    { pattern: /border-(forest|burgundy|sand)-(50|100|200|300|400|500|600|700|800|900)(\/\d+)?/ },
+    { pattern: /ring-(forest|burgundy|sand)-(500|600|700)/ },
+    { pattern: /bg-(forest|burgundy|sand)-(700|800|900)/, variants: ['dark'] },
+    { pattern: /text-(forest|burgundy|sand)-(200|300|400)/, variants: ['dark'] },
+    { pattern: /border-(forest|burgundy|sand)-(700|800)/, variants: ['dark'] },
+  ],
+  plugins: [],
+}
